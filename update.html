@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>Hackathon
+</title>
+</head>
+<body>
+	Name <input id = "name" type ="text"> </input><br><br>
+	Roll No <input id = "roll" type ="text"> </input><br><br>
+	email <input id = "email" type ="text"> </input><br><br>
+	Phone <input id = "phone" type ="text"> </input><br><br>
+	Year <input id = "year" type ="text"> </input><br><br>
+	Department <input id = "dept" type ="text"> </input><br><br>
+	
+	<button id ="register" >Register</button>
+	<button id ="check" >Check</button>
+	<button id ="update" >Update</button>
+	<button id ="delete" >Delete</button>
+	<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+
+<script>
+ 
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyDJhJjGmrOMZBZa5h9X2T5Nu6wvkvAocxo",
+    authDomain: "hackathon-4605f.firebaseapp.com",
+    databaseURL: "https://hackathon-4605f-default-rtdb.firebaseio.com",
+    projectId: "hackathon-4605f",
+    storageBucket: "hackathon-4605f.appspot.com",
+    messagingSenderId: "863584832379",
+    appId: "1:863584832379:web:777ec40ae7c90863180bde",
+    measurementId: "G-3RNPRNBQ09"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+ 
+ 
+  
+//ready
+var name ,roll ,email,phone,year,dept;
+function Ready()
+{
+name = document.getElementById('name').value;
+roll = document.getElementById('roll').value;
+email = document.getElementById('email').value;
+phone = document.getElementById('phone').value;
+year = document.getElementById('year').value;
+dept = document.getElementById('dept').value;
+}
+
+//reg
+document.getElementById("register").onclick = function()
+{
+	Ready();
+	firebase.database().ref('student/'+ roll).set
+	({
+		name:name,
+		roll:roll,
+		email:email,
+		phone:phone,
+		year : year,
+		dept : dept
+	
+	});
+	
+}
+  
+
+</script>
+
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,57 @@
+<html>
+<head>
+  <title>Firebase Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<style>
+body {
+  background-image: url('banner-bg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+<body>
+
+  <div id="login_div" class="main-div">
+    <h3>Login to View participants</h3>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password_field" />
+
+    <button onclick="login()">Login to Account</button>
+  </div>
+
+  <div id="user_div" class="loggedin-div" style = "color:white">
+    <h2>Welcome User</h3>
+    <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
+	<h3 ><a style = "color:pink" href="read.html" >Cloudathon Participants</a><br>
+	<a style = "color:pink" href="" >Hackathon Participants</a></h3>
+
+	
+    <button onclick="logout()">Logout</button>
+	
+	
+	
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+   var firebaseConfig = {
+    apiKey: "AIzaSyCCxPEUaqfneJZ3ZtHKFyAFHUyKHFIGuIU",
+    authDomain: "sighnup-9857d.firebaseapp.com",
+    projectId: "sighnup-9857d",
+    storageBucket: "sighnup-9857d.appspot.com",
+    messagingSenderId: "605879489762",
+    appId: "1:605879489762:web:9eb4cd0b097e2e927cbabb",
+    measurementId: "G-0T971JCJJY"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+  </script>
+  <script src="index.js"></script>
+
+</body>
+</html>
